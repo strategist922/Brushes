@@ -31,8 +31,12 @@ NSString *WDDropboxWasUnlinkedNotification = @"WDDropboxWasUnlinkedNotification"
 #pragma mark -
 #pragma mark Application lifecycle
 
+/**
+ * 通过plist设置默认属性
+ */
 - (void) setupDefaults
 {
+    // 存储轻量级的本地数据
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *defaultPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Defaults.plist"];
     [defaults registerDefaults:[NSDictionary dictionaryWithContentsOfFile:defaultPath]];
@@ -49,8 +53,10 @@ NSString *WDDropboxWasUnlinkedNotification = @"WDDropboxWasUnlinkedNotification"
     NSLog(@"No Dropbox Keys!");
     NSString *appKey = @"xxxx";
     NSString *appSecret = @"xxxx";
-    
+
+    // Dropbox的session
     DBSession *session = [[DBSession alloc] initWithAppKey:appKey appSecret:appSecret root:kDBRootAppFolder];
+    // 允许程序处理二次认证
     session.delegate = self; // DBSessionDelegate methods allow you to handle re-authenticating
     [DBSession setSharedSession:session];
     

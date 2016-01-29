@@ -41,6 +41,9 @@ typedef enum {
 @class WDProgressView;
 @class WDUnlockView;
 
+/**
+ * 画图主界面
+ */
 @interface WDCanvasController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate,
                                                     MFMailComposeViewControllerDelegate, UIPopoverControllerDelegate,
                                                         WDActionSheetDelegate, WDDocumentReplayDelegate, WDActionNameViewDelegate>

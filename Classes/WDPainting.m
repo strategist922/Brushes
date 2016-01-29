@@ -87,6 +87,9 @@ NSString *WDLayerAddedNotification = @"WDLayerAddedNotification";
 NSString *WDLayerDeletedNotification = @"WDLayerDeletedNotification";
 NSString *WDActiveLayerChangedNotification = @"WDActiveLayerChangedNotification";
 
+/**
+ * 使用指定分辨率进行初始化
+ */
 - (id) initWithSize:(CGSize)size
 {
     self = [super init];

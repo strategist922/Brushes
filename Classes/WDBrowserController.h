@@ -26,6 +26,9 @@
 @class WDDocument;
 @class WDMenu;
 
+/**
+ * 相当于画廊的控制器,一进app看到的第一个界面
+ */
 @interface WDBrowserController : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate, WDGridViewDataSource,
                                                     DBRestClientDelegate, MFMailComposeViewControllerDelegate, WDImportControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>
 {

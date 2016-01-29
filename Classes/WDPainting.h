@@ -25,11 +25,26 @@
 @class WDShader;
 @class WDTexture;
 
+/**
+ * 图形文档类
+ */
 @interface WDPainting : NSObject <WDCoding, NSCopying> {
+    /*
+     * 分辨率
+     */
     CGSize                  dimensions_;
+    /**
+     * 图层
+     */
     NSMutableArray          *layers_;
-    
+
+    /**
+     * 撤销管理器
+     */
     NSUndoManager           *undoManager_;
+    /**
+     * 未知
+     */
     NSInteger               suppressNotifications_;
     
     GLfloat                 projection_[16];

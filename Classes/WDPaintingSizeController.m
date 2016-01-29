@@ -87,6 +87,9 @@ const NSUInteger WDPaintingSizeCurrentVersion = 1;
 @synthesize browserController;
 @synthesize miniCanvases;
 
+/**
+ * 设置默认属性
+ */
 + (void) registerDefaults
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -401,6 +404,9 @@ const NSUInteger WDPaintingSizeCurrentVersion = 1;
     return YES;
 }
 
+/**
+ * 视图装载,绑定消息处理方法
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];

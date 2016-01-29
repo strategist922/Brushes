@@ -739,6 +739,9 @@ size_t WDGetTotalMemory()
     return mem;
 }
 
+/**
+ * 是否可以使用高清模式
+ */
 BOOL WDCanUseHDTextures()
 {
 #if TARGET_IPHONE_SIMULATOR

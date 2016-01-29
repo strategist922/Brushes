@@ -280,11 +280,15 @@ NSString *WDPaintingNewFilenameKey = @"WDPaintingNewFilenameKey";
     [self savePaintingOrder_];
 }
 
+/**
+ * 创建给定分辨率的图画
+ */
 - (void) createNewPaintingWithSize:(CGSize)size afterSave:(void (^)(WDDocument *document))afterSave
 {   
     WDPainting *painting = [[WDPainting alloc] initWithSize:size];
     [self installPainting:painting withName:[self uniqueFilename]
               initializer:^(WDDocument *document) {
+                  // 创建初始的层
                   // create initial layer
                   changeDocument(painting, [WDAddLayer addLayerAtIndex:0]);
               }
