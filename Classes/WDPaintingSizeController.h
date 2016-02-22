@@ -13,6 +13,9 @@
 
 @class WDBrowserController;
 
+/**
+ * 选择画布大小的界面
+ */
 @interface WDPaintingSizeController : UIViewController <UIScrollViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic) IBOutlet UIScrollView *scrollView;

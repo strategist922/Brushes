@@ -98,7 +98,7 @@ NSString *WDActiveLayerChangedNotification = @"WDActiveLayerChangedNotification"
         return nil;
     }
     
-    // we don't want to notify when we're initing
+    // 初始化的时候不想显示提示 we don't want to notify when we're initing
     [self beginSuppressingNotifications];
     
     self.undoManager = [[NSUndoManager alloc] init];
@@ -148,12 +148,12 @@ NSString *WDActiveLayerChangedNotification = @"WDActiveLayerChangedNotification"
     WDCheckGLError();
     [EAGLContext setCurrentContext:nil];
 }
-
+// 开始禁用提示
 - (void) beginSuppressingNotifications
 {
     suppressNotifications_++;
 }
-
+// 结束禁用提示
 - (void) endSuppressingNotifications
 {
     suppressNotifications_--;
@@ -1023,7 +1023,7 @@ NSString *WDActiveLayerChangedNotification = @"WDActiveLayerChangedNotification"
 #pragma mark -- Selection State Management
 
 const NSString *WDSelectionStateActiveLayer = @"WDSelectionStateActiveLayer";
-
+// 注册撤销消息
 - (void) registerForUndoNotifications
 {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter]; 

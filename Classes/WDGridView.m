@@ -54,7 +54,7 @@
 {
     return (CGRectGetWidth(self.bounds) + [dataSource cellDimension]) / ([self cellsPerRow] + 1);
 }
-
+// 计算表格的区域
 - (CGSize) computeContentSize
 {
     NSUInteger  numCells = [dataSource numberOfItemsInGridView:self];
@@ -141,7 +141,7 @@
     }
 }
 
-- (void) scrollToBottom
+- (void) scrollToBottom // 滚动到底部,估计是当文档很多的时候,改善用户体验
 {
     self.contentSize = [self computeContentSize];
     

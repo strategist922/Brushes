@@ -43,7 +43,7 @@
      */
     NSUndoManager           *undoManager_;
     /**
-     * 未知
+     * 是否禁用提示
      */
     NSInteger               suppressNotifications_;
     

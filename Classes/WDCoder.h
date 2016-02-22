@@ -18,7 +18,7 @@
 
 @protocol WDCoding;
 @protocol WDDataProvider;
-
+// 编码协议,相当于一个序列化接口
 @protocol WDCoder
 
 - (void) encodeArray:(NSArray *)array forKey:(NSString *)key;

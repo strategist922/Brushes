@@ -15,7 +15,7 @@
 
 @class WDCodingProgress;
 @protocol WDDataProvider;
-
+// 反序列化接口
 @protocol WDDecoder <NSObject>
 
 - (NSMutableArray *) decodeArrayForKey:(NSString *)key;

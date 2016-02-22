@@ -32,6 +32,9 @@ typedef enum {
 @property (nonatomic) WDStylusType type;
 @end
 
+/**
+ * 可描边、填充的图形的基类
+ */
 @interface WDStylusManager : NSObject <CBCentralManagerDelegate>
 
 @property (nonatomic) T1PogoManager *pogoManager;

@@ -50,7 +50,7 @@ static NSString *WDAttachmentNotification = @"WDAttachmentNotification";
 {
     [self updateTitle];
     
-    // Create an add button to display in the top right corner.
+    // 在右上角放一个新增按钮 Create an add button to display in the top right corner.
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                              target:self
                                                                              action:@selector(addPainting:)];
@@ -253,7 +253,7 @@ static NSString *WDAttachmentNotification = @"WDAttachmentNotification";
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(paintingAdded:)
                                                  name:WDPaintingAdded
-                                               object:nil];
+                                               object:nil]; // 注册了一堆消息
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(paintingsDeleted:)
@@ -378,7 +378,7 @@ static NSString *WDAttachmentNotification = @"WDAttachmentNotification";
 {
     [self.navigationController popToViewController:self animated:YES];
 }
-
+// 根据当前是否在编辑显示不同的状态栏
 - (void) updateTitle
 {
     if (self.isEditing) {
@@ -419,6 +419,7 @@ static NSString *WDAttachmentNotification = @"WDAttachmentNotification";
     }
 }
 
+// 创建新的画作
 - (void) createNewPainting:(CGSize)size
 {   
     [self dismissPopoverAnimated:NO];
@@ -427,6 +428,7 @@ static NSString *WDAttachmentNotification = @"WDAttachmentNotification";
     [self.navigationController pushViewController:canvasController animated:YES];
     
     [[WDPaintingManager sharedInstance] createNewPaintingWithSize:size afterSave:^(WDDocument *document) {
+        // 设置当前编辑的文档
         // set the document before setting the editing flag
         canvasController.document = document;
         canvasController.editing = YES;
@@ -766,7 +768,7 @@ static NSString *WDAttachmentNotification = @"WDAttachmentNotification";
 }
 
 #pragma mark - Managing View Controllers
-
+// 关掉弹出来的视图
 - (void) dismissPopoverAnimated:(BOOL)animated
 {    
     if (popoverController_) {
@@ -850,6 +852,9 @@ static NSString *WDAttachmentNotification = @"WDAttachmentNotification";
     [self showController:controller from:sender];
 }
 
+/**
+ * 新增画作
+ */
 - (void) addPainting:(id)sender
 {
     WDPaintingSizeController *controller = nil;

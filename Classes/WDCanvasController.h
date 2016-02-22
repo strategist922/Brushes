@@ -69,7 +69,7 @@ typedef enum {
     WDColorBalanceController   *balanceController_;
 }
 
-@property (nonatomic) WDDocument *document;
+@property (nonatomic) WDDocument *document; // 当前操作的文档
 @property (nonatomic, strong) WDDocumentReplay *replay;
 @property (weak, nonatomic, readonly) WDPainting *painting;
 @property (nonatomic) NSDictionary *canvasSettings;

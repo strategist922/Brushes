@@ -26,8 +26,12 @@
 @class WDTransformOverlay;
 @class WDTexture;
 
+/**
+ * 绘图主视图
+ */
 @interface WDCanvas : UIView <UIGestureRecognizerDelegate> {
 @private
+    // 修正手势
     // pinch gesture handling
     CGPoint                 correction_;
     NSUInteger              lastTouchCount_;

@@ -147,7 +147,7 @@ NSString *WDPaintingNewFilenameKey = @"WDPaintingNewFilenameKey";
     return self;
 }
 
-
+// 获取文档储存路径
 - (NSString *) documentDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 

@@ -1224,15 +1224,16 @@
 - (void) loadView
 {    
     UIView *background = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    background.opaque = YES;
+    background.opaque = YES;    // 不透明
     
     // TODO: temp fix for black artifacts/jagged lines
     //background.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
-    background.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
+    background.backgroundColor = [UIColor colorWithWhite:1 alpha:1]; // 白色
     
     self.view = background;
     
     if (self.painting) {
+        // 画布
         // background painting view
         canvas_ = [[WDCanvas alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         canvas_.painting = self.painting;
@@ -1418,7 +1419,7 @@
     
     return playButton;
 }
-
+// 入口
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

@@ -60,7 +60,7 @@
 {
     return [NSString stringWithFormat:@"%@ added:%@ layer:%lu", [super description], self.layerUUID, (unsigned long) self.index];
 }
-
+// 创建一个图层创建类
 + (WDAddLayer *) addLayerAtIndex:(NSUInteger)index 
 {
     WDAddLayer *notification = [[WDAddLayer alloc] init];

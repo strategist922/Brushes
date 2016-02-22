@@ -67,16 +67,16 @@ NSString *WDDropboxWasUnlinkedNotification = @"WDDropboxWasUnlinkedNotification"
     browserController = [[WDBrowserController alloc] initWithNibName:nil bundle:nil];
     navigationController = [[UINavigationController alloc] initWithRootViewController:browserController];
     
-    // set a good background color for the superview so that orientation changes don't look hideous
+    // 防止在旋转的时候颜色不好看 set a good background color for the superview so that orientation changes don't look hideous
     window.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
     
     window.rootViewController = navigationController;
-    [window makeKeyAndVisible];
+    [window makeKeyAndVisible]; // 就是将当前的window作为可见的视图,展示出来。
 
     // use this line to forget registered Pogo Connects
     //[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"T1PogoManagerKnownPeripherals"];
     
-    // create the shared stylus manager so it can set things up for the pressure pens
+    // 创建笔刷管理器,可以管理压感笔? create the shared stylus manager so it can set things up for the pressure pens
     [WDStylusManager sharedStylusManager];
 }
 
